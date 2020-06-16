@@ -32,7 +32,7 @@ import * as fs from 'fs';
   const { engine, observer, requestsObserver }: { engine: ActorInitSparql, observer: MyActionObserverRdfDereference, requestsObserver: ActionObserverHttp } = runner.collectActors({
     engine: 'urn:comunica:sparqlinit', // The SPARQL engine instance. The value is the IRI of the SPARQL init actor: https://github.com/comunica/comunica/blob/master/packages/actor-init-sparql/config/sets/sparql-init.json
     observer: 'urn:observer:my', // Our observer instance. The value is the IRI that we gave it in config/sets/rdf-dereference-observer.json
-    requestsObserver: 'urn:comunica:my',
+    requestsObserver: 'urn:httpobserver:my',
   });
 
   // Execute a SPARQL query using our engine.
@@ -49,7 +49,6 @@ import * as fs from 'fs';
 
   // Handle the query results in a streaming manner
   let results: number = 0;
-  let httpObserver: ActionObserverHttp;
 
   // query	#TPs	exec time 1st sol.	#req 1st sol	exec. time	#req	#triples received	result size	timeout?
   result.bindingsStream.on('data', (data) => results++);
@@ -59,8 +58,8 @@ import * as fs from 'fs';
         let time = console.timeEnd("time")
         // stats to collect: query	#TPs	exec time 1st sol.	#req 1st sol	exec. time	#req	#triples received	result size	timeout?
       // Print stats to stdout
-      console.log('Query results\tHTTP requests\tProcessed quads\tExecution time');
-      console.log(results + '\t' + observer.urls.length + '\t' + observer.quads + '\t' + httpObserver.requests);
+      console.log('Query results\tHTTP requests (from rdf-dereference bus)\tProcessed quads\tHTTP requests (from http bus)');
+      console.log(results + '\t' + observer.urls.length + '\t' + observer.quads + '\t' + requestsObserver.requests);
       // console.log('HTTP requests: ' + observer.urls.length);
       // console.log('Processed quads: ' + observer.quads);
       // console.timeEnd("time");

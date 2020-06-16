@@ -8,6 +8,7 @@
   "@type": "Runner",
   "import": [
     "files-cais:config/config-default.json",
+    "files-ex:config/sets/http-observer.json",
     "files-ex:config/sets/rdf-deference-observer.json"
   ]
 }
