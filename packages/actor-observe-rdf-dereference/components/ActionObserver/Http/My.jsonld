@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/example-actor-rdf-dereference/^1.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/@comunica/bus-http/^1.0.0/components/context.jsonld"
+  ],
+  "@id": "npmd:example-actor-rdf-dereference",
+  "components": [
+    {
+      "@id": "ex:ActionObserver/Http/Main",
+      "@type": "Class",
+      "extends": "cc:ActionObserver",
+      "requireElement": "ActionObserverHttp",
+      "comment": "Observes HTTP actions",
+      "parameters": [
+        {
+          "@id": "cc:ActionObserver/bus",
+          "defaultScoped": {
+            "defaultScope": "ex:ActionObserver/Http/Main",
+            "defaultScopedValue": { "@id": "cbh:Bus/Http" }
+          }
+        }
+      ],
+      "constructorArguments": [
+        {
+          "extends": "cc:ActionObserver/constructorArgumentsObject"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@
   "@type": "Module",
   "requireName": "example-actor-rdf-dereference",
   "import": [
+    "files-ex:components/ActionObserver/Http/My.jsonld",
     "files-ex:components/ActionObserver/RdfDereference/My.jsonld"
   ]
 }
