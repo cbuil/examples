@@ -6,7 +6,7 @@
   "@id": "npmd:example-actor-rdf-dereference",
   "components": [
     {
-      "@id": "ex:ActionObserver/Http/Stats",
+      "@id": "ex:ActionObserver/RdfDereference/Main",
       "@type": "Class",
       "extends": "cc:ActionObserver",
       "requireElement": "MyActionObserverRdfDereference",
@@ -15,7 +15,7 @@
         {
           "@id": "cc:ActionObserver/bus",
           "defaultScoped": {
-            "defaultScope": "ex:ActionObserver/Http/Stats",
+            "defaultScope": "ex:ActionObserver/RdfDereference/Main",
             "defaultScopedValue": { "@id": "cbrd:Bus/RdfDereference" }
           }
         }
