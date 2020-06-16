@@ -58,7 +58,7 @@ import * as fs from 'fs';
         let time = console.timeEnd("time")
         // stats to collect: query	#TPs	exec time 1st sol.	#req 1st sol	exec. time	#req	#triples received	result size	timeout?
       // Print stats to stdout
-      console.log('Query results\tHTTP requests\tProcessed quads\tExecution time');
+      console.log('Query results\tHTTP requests (from rdf-dereference bus)\tProcessed quads\tHTTP requests (from http bus)');
       console.log(results + '\t' + observer.urls.length + '\t' + observer.quads + '\t' + requestsObserver.requests);
       // console.log('HTTP requests: ' + observer.urls.length);
       // console.log('Processed quads: ' + observer.quads);
